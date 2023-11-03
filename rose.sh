@@ -12,7 +12,7 @@ git clone --depth=1 https://github.com/kdrag0n/proton-clang clang
 
 make O=out ARCH=arm64 rosemary_defconfig
 
-PATH="${PWD}/clang/bin:${PATH}
+PATH="${PWD}/clang/bin:${PATH}"
 make -j$(nproc --all) O=out \
                       ARCH=arm64 \
                       CC="clang" \
