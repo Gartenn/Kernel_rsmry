@@ -8,7 +8,7 @@ ccache -M 120G
 export ARCH=arm64
 export KBUILD_BUILD_HOST=GearCI
 export KBUILD_BUILD_USER="Gartenn"
-git clone --depth=1 https://github.com/sarthakroy2002/android_prebuilts_clang_host_linux-x86_clang-6443078 clang
+git clone --depth=1 https://gitlab.com/clangsantoni/zyc_clang.git clang
 git clone --depth=1 https://gitlab.com/firefly-linux/prebuilts/gcc/linux-x86/aarch64/gcc-linaro-6.3.1-2017.05-x86_64_aarch64-linux-gnu.git los-4.9-64
 git clone --depth=1 https://github.com/MayuriLabs/linaro_arm-linux-gnueabihf-7.5 los-4.9-32
 
@@ -29,7 +29,7 @@ function zupload()
 git clone --depth=1 https://github.com/Gartenn/Anykernel3.git -b moon AnyKernel
 cp out/arch/arm64/boot/Image.gz-dtb AnyKernel
 cd AnyKernel
-zip -r9 DrgnprjktKSU-rosemary.zip *
+zip -r9 Drgnprjktrosemary.zip *
 }
 
 compile
