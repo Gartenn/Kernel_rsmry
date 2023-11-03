@@ -8,7 +8,7 @@ ccache -M 120G
 export ARCH=arm64
 export KBUILD_BUILD_HOST=GearCI
 export KBUILD_BUILD_USER="Gartenn"
-git clone --depth=1 https://github.com/kdrag0n/proton-clang clang
+git clone --depth=1 https://github.com/EmanuelCN/zyc_clang-14 clang
 
 make O=out ARCH=arm64 rosemary_defconfig
 
@@ -18,7 +18,13 @@ make -j$(nproc --all) O=out \
                       CC="clang" \
                       CROSS_COMPILE=aarch64-linux-gnu- \
                       CROSS_COMPILE_ARM32=arm-linux-gnueabihf- \
-                      CONFIG_NO_ERROR_ON_MISMATCH=y
+                      LLVM=1
+                      LLVM_IAS=1
+                      AR=llvm-ar
+                      NM=llvm-nm
+                      OBJCOPY=llvm-objcopy
+                      OBJDUMP=llvm-objdump
+                      
 }
 
 function zupload()
