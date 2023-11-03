@@ -8,7 +8,7 @@ ccache -M 120G
 export ARCH=arm64
 export KBUILD_BUILD_HOST=GearCI
 export KBUILD_BUILD_USER="Gartenn"
-git clone --depth=1 https://gitlab.com/clangsantoni/zyc_clang.git clang
+git clone --depth=1 https://github.com/EmanuelCN/zyc_clang-14 clang
 
 make O=out ARCH=arm64 rosemary_defconfig
 
