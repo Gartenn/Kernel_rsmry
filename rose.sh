@@ -12,11 +12,12 @@ git clone --depth=1 https://gitlab.com/clangsantoni/zyc_clang.git clang
 
 make O=out ARCH=arm64 rosemary_defconfig
 
-PATH="${PWD}/clang/bin:${PATH}:${PWD}/los-4.9-32/bin:${PATH}:${PWD}/los-4.9-64/bin:${PATH}" \
+PATH="${PWD}/clang/bin:${PATH}" \
 make -j$(nproc --all) O=out \
                       ARCH=arm64 \
                       CC="clang" \
-                      CLANG_TRIPLE=aarch64-linux-gnu- \
+                      CROSS_COMPILE=aarch64-linux-gnu- \
+                      CROSS_COMPILE_ARM32=arm-linux-gnueabi-
                       CONFIG_NO_ERROR_ON_MISMATCH=y
 }
 
