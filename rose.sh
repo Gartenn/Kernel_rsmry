@@ -105,7 +105,7 @@ clone()
      fi
 
      msg "Clone AnyKernel3 source"
-     git clone --depth=1 https://github.com/Gartenn/AnyKernel3
+     git clone --depth=1 https://github.com/ChuckProjekt/AnyKernel3
 
 }
 
