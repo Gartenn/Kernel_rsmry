@@ -76,7 +76,7 @@ clone()
      if [ "$TOOLCHAIN" = "aosp" ]
      then
           msg "Clone latest aosp clang toolchain"
-          wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r498229.tar.gz -O "aosp-clang.tar.gz"
+          wget https://github.com/ZyCromerZ/Clang/releases/download/14.0.6-20231003-release/Clang-14.0.6-20231003.tar.gz -O aosp-clang.tar.gz
           mkdir clang-llvm && tar -xf aosp-clang.tar.gz -C clang-llvm && rm -rf aosp-clang.tar.gz
           git clone --depth=1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9 -b lineage-19.1 gcc64
           git clone --depth=1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9 -b lineage-19.1 gcc32
@@ -139,7 +139,7 @@ exports()
 
        # Specify CPU core/thread for compilation.
        # e.g: '2'/'4'/'8'/'12' or set default by using 'nproc --all'
-       CORES=$(nproc --all)
+       CORES=$(8)
 
 }
 
